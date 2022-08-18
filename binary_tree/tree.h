@@ -38,14 +38,14 @@ void	free_tree(t_node *root);
 
 // PRINTING
 /*********************RECURSIVE***************************/
-void	preorder_print(t_node *root);
-void	inorder_print(t_node *root);
-void	postorder_print(t_node *root);
+void	preorder_print(t_node *root, void (*print)(void *, const char *str));
+void	inorder_print(t_node *root, void (*print)(void *, const char *str));
+void	postorder_print(t_node *root, void (*print)(void *, const char *str));
 /*********************************************************/
 
 /*********************NON-RECURSIVE***********************/
-void	print_tree(t_node *root);
-void	print_tree_with_spaces(t_node *root);
+void	print_tree(t_node *root, void (*print)(void *, const char *str));
+void	print_tree_with_spaces(t_node *root, void (*print)(void *, const char *str));
 /*********************************************************/
 
 #endif

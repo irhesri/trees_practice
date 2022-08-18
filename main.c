@@ -60,9 +60,10 @@ int	main(int ac, char **av)
 
 	/*****************	TEST PROPERTIES	************/
 	node = root;
+	tmp = malloc(sizeof(int *));
+	*tmp = g;
 	if (ac > 2)
 	{
-		tmp = malloc(sizeof(int *));
 		*tmp = atoi(av[2]);
 		node = get_node(root, tmp, compare_int);
 	}
@@ -70,14 +71,19 @@ int	main(int ac, char **av)
 	/***********************************************/
 
 	/*****************	TEST TYPES	****************/
-	test_types(root);
+	// test_types(root);
 	/***********************************************/
 
 	/*****************	TEST PRINT	****************/
-	test_print(root);
+	// test_print(root);
 	/***********************************************/
-	
+
+	/*****************	TEST PRINT	****************/
+	// test_search(root, tmp, compare_int);
+	/***********************************************/
+
 	/********	TRASH	*********/
+	free (tmp);
 	free_tree(root);
 	free (k);
 }

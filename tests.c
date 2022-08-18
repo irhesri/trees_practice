@@ -3,7 +3,7 @@
 // GET PROPERTIES OF NODE
 void	test_properties(t_node *root, t_node *node)
 {
-	printf("HEIGHT:\t%d\n", get_height(node));
+	printf("\nHEIGHT:\t%d\n", get_height(node));
 	printf("SIZE:  \t%d\n", get_size(node));
 	printf("DEPTH: \t%d\n", get_depth(root, node));
 }
@@ -34,7 +34,7 @@ void	test_types(t_node *root)
 	int	i;
 
 	i = -1;
-	printf("THIS TREE IS:\n");
+	printf("\nTHIS TREE IS:\n");
 	while (++i < 8)
 	{
 		printf("\t--->");
@@ -47,23 +47,23 @@ void	test_search(t_node *root, void *content, bool (*compare)(void *, void *))
 	t_node	*node;
 
 	node = get_node(root, content, compare);
-	printf("node content:\t%d", *(int *)(node->content));
+	printf("\nNODE CONTENT:\t%d", *(int *)(node->content));
 	node = get_parent(root, content, compare);
-	printf("parent node content:\t%d", *(int *)(node->content));
+	printf("\nPARENT NODE CONTENT:\t%d\n", *(int *)(node->content));
 }
 
 void	test_print(t_node *root)
 {
-	printf("PREORDER PRINT:\t");
-	preorder_print(root);
-	printf("\nINORDER PRINT:\t");
-	inorder_print(root);
+	printf("\nPREORDER PRINT:\t\t");
+	preorder_print(root, print_int);
+	printf("\nINORDER PRINT:\t\t");
+	inorder_print(root, print_int);
 	printf("\nPOSTORDER PRINT:\t");
-	postorder_print(root);
+	postorder_print(root, print_int);
 	printf("\n");
-	printf("\nPRINT NODES:\t");
-	print_tree(root);
-	printf("\nPRINT TREE:\n");
-	print_tree_with_spaces(root);
+	printf("\nPRINT NODES:\n");
+	print_tree(root, print_int);
+	// printf("\nPRINT TREE:\n");
+	// print_tree_with_spaces(root, print_int);
 	printf("\n");
 }

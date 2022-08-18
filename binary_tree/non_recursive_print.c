@@ -1,6 +1,6 @@
 #include "../header.h"
 
-void	print_tree(t_node *root)
+void	print_tree(t_node *root, void (*print)(void *, const char *))
 {
 	t_queue		*q;
 	t_q_node	*node;
@@ -12,7 +12,7 @@ void	print_tree(t_node *root)
 		node = pop(q);
 		if (node->content)
 		{
-			printf("%d\t", *(int *)(node->content)->content);
+			print((node->content)->content, "\t");
 			if ((node->content)->left)
 				push(q, (node->content)->left);
 			if ((node->content)->right)
@@ -35,7 +35,7 @@ void	print_spaces(int x)
 		printf(" ");
 }
 
-void	print_tree_with_spaces(t_node *root)
+void	print_tree_with_spaces(t_node *root, void (*print)(void *, const char *))
 {
 	int			i;
 	int			n;
@@ -55,14 +55,11 @@ void	print_tree_with_spaces(t_node *root)
 			node = pop(q);
 			if(node && node->content)
 			{
-				printf("%d", *(int *)(node->content)->content);
+				print((node->content)->content, NULL);
 				multiple_push(q, 2, (node->content)->left, (node->content)->right);
 			}
 			else
-			{
 				printf("-");
-				// multiple_push(q, 2, NULL, NULL);
-			}
 			print_spaces((x * 2) * (i < (n - 1)));
 			free (node);
 		}

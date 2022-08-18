@@ -36,7 +36,41 @@ int	get_size(t_node *root)
 	return (size);
 }
 
-int	get_depth(t_node *root, t_node *node)
+int	get_depth(t_node *root, t_node *n)
 {
-	return(get_height(root) - get_height(node));
+	bool		b;
+	int			depth;
+	t_node		*tmp;
+	t_queue		*q;
+	t_q_node	*node;
+
+	b = 0;
+	depth = 0;
+	q = new_queue(root);
+	push(q, NULL);
+	while (!b && q->size)
+	{
+		node = pop(q);
+		if (!node->content && ++depth)
+			push(q, NULL);
+		else
+		{
+			tmp = (node->content)->right;
+			b = (node->content == n);
+			for (int j = 0; !b && j < 2; j++)
+			{
+				if (tmp)
+				{
+					if (!b && tmp)
+						push(q, tmp);
+				}
+				tmp = (node->content)->left;
+			}
+		}
+		free(node);
+	}
+	free_queue(q);
+	if (!b)
+		return (-1);
+	return (depth);
 }

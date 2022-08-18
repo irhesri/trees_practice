@@ -17,6 +17,13 @@ char	error(char *str);
 bool	compare_int(void *a, void *b);
 bool	compare_str(void *a, void *b);
 
+// PRINTING FUNCTIONS
+void	print_int(void *content, const char *str);
+void	print_char(void *content, const char *str);
+void	print_str(void *content, const char *str);
+void	print_address(void *content, const char *str);
+
+
 // TESTS
 void	test_properties(t_node *root, t_node *node);
 void	test_types(t_node *root);

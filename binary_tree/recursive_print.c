@@ -1,31 +1,31 @@
 #include "../header.h"
 
 // PreOrder Traversal
-void	preorder_print(t_node *root)
+void	preorder_print(t_node *root, void (*print)(void *, const char *))
 {
 	if (!root)
 		return ;
-	printf("%d\t", *(int *)(root->content));
-	preorder_print(root->left);
-	preorder_print(root->right);
+	print((root->content), "\t");
+	preorder_print(root->left, print);
+	preorder_print(root->right, print);
 }
 
 // InOrder Traversal
-void	inorder_print(t_node *root)
+void	inorder_print(t_node *root, void (*print)(void *, const char *))
 {
 	if (!root)
 		return ;
-	inorder_print(root->left);
-	printf("%d\t", *(int *)(root->content));
-	inorder_print(root->right);
+	inorder_print(root->left, print);
+	print((root->content), "\t");
+	inorder_print(root->right, print);
 }
 
 // PostOrder Traversal
-void	postorder_print(t_node *root)
+void	postorder_print(t_node *root, void (*print)(void *, const char *))
 {
 	if (!root)
 		return ;
-	postorder_print(root->left);
-	postorder_print(root->right);
-	printf("%d\t", *(int *)(root->content));
+	postorder_print(root->left, print);
+	postorder_print(root->right, print);
+	print((root->content), "\t");
 }
