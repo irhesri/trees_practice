@@ -1,9 +1,9 @@
 all:
-	gcc *.c ./recursive/*.c -lm
+	gcc *.c ./queue/*.c ./tree/*.c ./additional_functions/*.c -lm
 #./non-recursive/*.c -g 
 
 san:
-	gcc *.c ./recursive/*.c -lm -g -fsanitize=address
+	gcc *.c ./queue/*.c ./tree/*.c ./additional_functions/*.c -lm -g -fsanitize=address
 #./non-recursive/*.c
 
 val:

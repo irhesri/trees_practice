@@ -1762,11 +1762,11 @@
             "parentId": "page",
             "childIndex": 87,
             "point": [
-              -237.88,
-              33.18
+              -257.39,
+              20.29
             ],
             "rotation": 0,
-            "text": "height of root == height of tree == 3",
+            "text": "height of tree == 3",
             "style": {
               "color": "indigo",
               "size": "small",
@@ -1784,8 +1784,8 @@
             "parentId": "page",
             "childIndex": 88,
             "point": [
-              -129.35,
-              62.39
+              -176.47,
+              58.38
             ],
             "rotation": 0,
             "text": "depth of root == 0",
@@ -2101,8 +2101,8 @@
             "parentId": "page",
             "childIndex": 98,
             "point": [
-              -754.86,
-              291.46
+              -841.98,
+              290.78
             ],
             "rotation": 0,
             "text": "LEVEL 2",
@@ -2123,8 +2123,8 @@
             "parentId": "page",
             "childIndex": 99,
             "point": [
-              -752.01,
-              25.86
+              -832.46,
+              16.3
             ],
             "rotation": 0,
             "text": "LEVEL 0",
@@ -2145,8 +2145,8 @@
             "parentId": "page",
             "childIndex": 100,
             "point": [
-              -751.58,
-              143.38
+              -835.37,
+              144.93
             ],
             "rotation": 0,
             "text": "LEVEL 1",
@@ -2167,8 +2167,8 @@
             "parentId": "page",
             "childIndex": 101,
             "point": [
-              -757.98,
-              393.87
+              -845.55,
+              448.09
             ],
             "rotation": 0,
             "text": "LEVEL 3",
@@ -2189,8 +2189,8 @@
             "parentId": "page",
             "childIndex": 102,
             "point": [
-              -749.13,
-              542.31
+              -842.92,
+              560.52
             ],
             "rotation": 0,
             "text": "LEVEL 4",
@@ -2211,8 +2211,8 @@
             "parentId": "page",
             "childIndex": 103,
             "point": [
-              -748.25,
-              -59.39
+              281.05,
+              314.57
             ],
             "rotation": 0,
             "text": "max number of nodes in a level  =  pow(2, level)",
@@ -2233,11 +2233,11 @@
             "parentId": "page",
             "childIndex": 104,
             "point": [
-              -748.12,
-              -30.54
+              282.4,
+              343.86
             ],
             "rotation": 0,
-            "text": "max number of nodes in a tree  =  pow(2, height) -1",
+            "text": "max number of nodes in a tree  =  pow(2, height + 1) -1",
             "style": {
               "color": "black",
               "size": "small",
@@ -2255,8 +2255,8 @@
             "parentId": "page",
             "childIndex": 105,
             "point": [
-              -747.75,
-              -87.93
+              282.64,
+              283.81
             ],
             "rotation": 0,
             "text": "min number of levels in a tree  =  log2(number of nodes + 1)",
@@ -2268,6 +2268,216 @@
               "scale": 0.9141588785046729,
               "font": "script",
               "textAlign": "middle"
+            }
+          },
+          "f8982325-7d82-4f1a-21da-d4216c8fc6cc": {
+            "id": "f8982325-7d82-4f1a-21da-d4216c8fc6cc",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 106,
+            "point": [
+              288.66,
+              182.52
+            ],
+            "rotation": 0,
+            "text": "size of a tree == number of nodes in a tree",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "solid",
+              "scale": 0.9141588785046729,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "9cac8c42-6931-496e-2627-f3ac938ec899": {
+            "id": "9cac8c42-6931-496e-2627-f3ac938ec899",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 107,
+            "point": [
+              288.47,
+              216.28
+            ],
+            "rotation": 0,
+            "text": "height of a tree == height of the root",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "solid",
+              "scale": 0.9141588785046729,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "10ef6d37-c5d5-43e9-326f-159d45741dfd": {
+            "id": "10ef6d37-c5d5-43e9-326f-159d45741dfd",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 110,
+            "point": [
+              286.14,
+              86.71
+            ],
+            "rotation": 0,
+            "text": "node of 0 is the root",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "solid",
+              "scale": 0.9141588785046729,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "25ae6595-7bf1-408e-1db0-e196ee78d80c": {
+            "id": "25ae6595-7bf1-408e-1db0-e196ee78d80c",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 111,
+            "point": [
+              287.41,
+              119.37
+            ],
+            "rotation": 0,
+            "text": "nodes of 3-4-5-7 are the leaves",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "solid",
+              "scale": 0.9141588785046729,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "e78e4dc1-ad94-4b46-07ea-738eb7fcdf63": {
+            "id": "e78e4dc1-ad94-4b46-07ea-738eb7fcdf63",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 113,
+            "point": [
+              286.42,
+              151.46
+            ],
+            "rotation": 0,
+            "text": "edge is the link between the parent node and the child node",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "solid",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "0e60f643-d3b7-4e21-1fa8-c83825c4dfd0": {
+            "id": "0e60f643-d3b7-4e21-1fa8-c83825c4dfd0",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 114,
+            "point": [
+              279.9,
+              279.87
+            ],
+            "size": [
+              554.53,
+              105.44
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "indigo",
+              "size": "small",
+              "isFilled": false,
+              "dash": "dotted",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "ef51cf4a-ee9d-4492-3d8b-67b1340177f5": {
+            "id": "ef51cf4a-ee9d-4492-3d8b-67b1340177f5",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 115,
+            "point": [
+              279.9,
+              84.99
+            ],
+            "size": [
+              557.21,
+              173.65
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "dotted",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "81e0379c-568c-4b99-3b1b-6a4d8dc8df27": {
+            "id": "81e0379c-568c-4b99-3b1b-6a4d8dc8df27",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              4.059999999999945,
+              337.2633333333333
+            ],
+            "rotation": 0,
+            "text": " ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "start"
+            }
+          },
+          "2d2e5f93-654a-412c-0ba9-85f78b37c0eb": {
+            "id": "2d2e5f93-654a-412c-0ba9-85f78b37c0eb",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              -5.490000000000009,
+              335.7033333333333
+            ],
+            "rotation": 0,
+            "text": " ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "start"
             }
           }
         },

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../header.h"
 
 char	error(char *str)
 {
@@ -9,9 +9,4 @@ char	error(char *str)
 int		max(int a, int b)
 {
 	return (a * (a >= b) + b *(a < b));
-}
-
-short	compare_int(void *a, void *b)
-{
-	return (*(int *)a != *(int *)b);
 }

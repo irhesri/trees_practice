@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../header.h"
 
 t_q_node	*new_q_node(t_node *node)
 {
@@ -27,6 +27,21 @@ t_queue	*new_queue(t_node *node)
 	return (q);
 }
 
+t_q_node	*pop(t_queue *q)
+{
+	t_q_node	*node;
+
+	if (!q->head)
+		return (NULL);
+	node = q->head;
+	q->head = (q->head)->next;
+	node->next = NULL;
+	q->size--;
+	if (!q->head)
+		q->tail = NULL;
+	return (node);
+}
+
 void	push(t_queue *q, t_node *content)
 {
 	t_q_node	*new;
@@ -43,30 +58,14 @@ void	push(t_queue *q, t_node *content)
 	q->tail = new;
 }
 
-t_q_node	*pop(t_queue *q)
+void	multiple_push(t_queue *q, int size, ...)
 {
-	t_q_node	*node;
+	int		i;
+	va_list	args;
 
-	if (!q->head)
-		return (NULL);
-	node = q->head;
-	q->head = (q->head)->next;
-	node->next = NULL;
-	q->size--;
-	if (!q->head)
-		q->tail = NULL;
-	return (node);
-}
-
-void	print_queue(t_queue *q)
-{
-	t_q_node	*node;
-
-	node = q->head;
-	while (node)
-	{
-		printf("%d\n", *(int *)(node->content));
-		node = node->next;
-	}
-	
+	i = -1;
+	va_start(args, size);
+	while (++i < size)
+		push(q, va_arg(args, t_node *));
+	va_end(args);
 }

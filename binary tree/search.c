@@ -1,6 +1,6 @@
-#include "header.h"
+#include "../header.h"
 
-t_node	*get_node(t_node *root, void *content, short (*compare)(void *, void *))
+t_node	*get_node(t_node *root, void *content, bool (*compare)(void *, void *))
 {
 	t_node		*tmp;
 	t_queue		*q;
@@ -28,7 +28,7 @@ t_node	*get_node(t_node *root, void *content, short (*compare)(void *, void *))
 	return (tmp);
 }
 
-t_node	*get_parent(t_node *root, void *content, short (*compare)(void *, void *))
+t_node	*get_parent(t_node *root, void *content, bool (*compare)(void *, void *))
 {
 	t_node		*tmp;
 	t_node		*res;
