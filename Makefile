@@ -1,10 +1,12 @@
+
+NAME = t
+MAIN = main.c
+TEST = tests.c
+QUEUE = ./queue/*.c
+TREE = ./binary_tree/*.c
+FUNCTIONS = ./additional_functions/*.c
+CFLAGS = -lm -g -fsanitize=address
+CC = gcc
+
 all:
-	gcc *.c ./queue/*.c ./binary_tree/*.c ./additional_functions/*.c -lm
-#./non-recursive/*.c -g 
-
-san:
-	gcc *.c ./queue/*.c ./binary_tree/*.c ./additional_functions/*.c -lm -g -fsanitize=address
-#./non-recursive/*.c
-
-val:
-	valgrind ./a.out
+	$(CC) $(MAIN) $(QUEUE) $(TREE) $(TEST) $(FUNCTIONS) $(CFLAGS)

@@ -29,10 +29,10 @@ void	print_tree(t_node *root)
 	free_queue(q);
 }
 
-void	print_tabs(int x)
+void	print_spaces(int x)
 {
-	while (x--)
-		printf("\t");
+	while (x && --x)
+		printf(" ");
 }
 
 void	print_tree_with_spaces(t_node *root)
@@ -45,12 +45,12 @@ void	print_tree_with_spaces(t_node *root)
 
 	n = 1;
 	q = new_queue(root);
-	x = pow(2, get_height(root)/* + 1*/);
-	while (n <= pow(2, get_height(root)))
+	x = pow(2, get_height(root) + 1);
+	while (n <= (pow(2, get_height(root) + 1)))
 	{
 		i = -1;
-		print_tabs(x);
-		while (++i < n)
+		print_spaces(x);
+		while (++i < n && q->size)
 		{
 			node = pop(q);
 			if(node && node->content)
@@ -61,9 +61,9 @@ void	print_tree_with_spaces(t_node *root)
 			else
 			{
 				printf("-");
-				multiple_push(q, 2, NULL, NULL);
+				// multiple_push(q, 2, NULL, NULL);
 			}
-			print_tabs((x * 2) * (i < (n - 1)));
+			print_spaces((x * 2) * (i < (n - 1)));
 			free (node);
 		}
 		printf("\n\n");

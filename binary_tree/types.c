@@ -4,27 +4,24 @@
 // EVERY NODE HAS 0 OR 2 CHILDS
 bool	is_full(t_node *root)
 {
-	bool		b;
+	short		b;
 	t_queue		*q;
 	t_q_node	*node;
 
 	if (!root)
 		return (1);
+	b = 0;
 	q = new_queue(root);
-	while (q->size)
+	while (b != 1 && q->size)
 	{
 		node = pop(q);
 		b = !(node->content)->right + !(node->content)->left;
 		if (!b)
 			multiple_push(q, 2, (node->content)->left, (node->content)->right);
 		free (node);
-		if (b == 1)
-			break;
 	}
 	free_queue(q);
-	if (b == 1)
-		return (0);
-	return(1);
+	return(b != 1);
 }
 
 // ALL LEVELS ARE FULL
