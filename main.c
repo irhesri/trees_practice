@@ -5,12 +5,12 @@ int	main(int ac, char **av)
 {
 	g = atoi(av[1]);
 	int	**i;
-	i = (int **)malloc (sizeof(int *) * (g + 1));
+	i = (int **)malloc (sizeof(int *) * (g));
 	t_node *root;
 	int	**k = i;
-	for (int j = 0; j < g + 1; j++)
+	for (int j = 0; j < g; j++)
 		*(i + j) = malloc (sizeof(int));
-	for (int j = 0; j < g + 1; j++)
+	for (int j = 0; j < g; j++)
 		**(i + j) = j + 1;
 
 	root = NULL;
@@ -19,8 +19,8 @@ int	main(int ac, char **av)
 	// t_queue *q;
 	t_node *new;
 
-	new =new_node(*(i + g));
-	(get_node(root, *(i + 5), compare_int)->left) = new;
+	// new =new_node(*(i + g));
+	// (get_node(root, *(i + 5), compare_int)->left) = new;
 	// q = new_queue(NULL);
 	// int j = -1;
 	// printf("%d\n", *(int *)((get_node(root, *(i + j - 1), compare_int))->content));

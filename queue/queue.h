@@ -1,7 +1,7 @@
 #ifndef QUEUE_H
 # define QUEUE_H
 
-# include "../tree/tree.h"
+# include "../binary_tree/tree.h"
 # include <stdio.h>
 
 typedef struct s_q_node
