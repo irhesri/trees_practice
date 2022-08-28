@@ -46,6 +46,8 @@ int	get_depth(t_node *root, t_node *n)
 
 	b = 0;
 	depth = 0;
+	if (get_height(n) == -1)
+		return (-1);
 	q = new_queue(root);
 	push(q, NULL);
 	while (!b && q->size)

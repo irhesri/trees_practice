@@ -94,19 +94,23 @@ int	main(int ac, char **av)
 		*tmp = atoi(av[2]);
 		node = get_node(root, tmp, compare_int);
 	}
-	test_properties(root, node);
+	// test_properties(root, node);
 	/***********************************************/
 
 	/*****************	TEST TYPES	****************/
-	test_types(root);
+	// test_types(root);
 	/***********************************************/
 
 	/*****************	TEST PRINT	****************/
-	test_print(root);
+	// test_print(root);
 	/***********************************************/
 
 	/*****************	TEST PRINT	****************/
-	test_search(root, tmp, compare_int);
+	// test_search(root, tmp, compare_int);
+	/***********************************************/
+
+	/*****************	TEST ROTATION  *************/
+	test_rotation(root, tmp, compare_int);
 	/***********************************************/
 
 	/********	TRASH	*********/

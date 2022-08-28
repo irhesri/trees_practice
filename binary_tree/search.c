@@ -6,7 +6,7 @@ t_node	*get_node(t_node *root, void *content, int (*compare)(void *, void *))
 	t_queue		*q;
 	t_q_node	*node;
 
-	if (!root)
+	if (!root || !content)
 		return (NULL);
 	tmp = NULL;
 	q = new_queue(root);
@@ -35,7 +35,7 @@ t_node	*get_parent(t_node *root, void *content, int (*compare)(void *, void *))
 	t_queue		*q;
 	t_q_node	*node;
 
-	if (!root || !compare(root->content, content))
+	if (!root || !content || !compare(root->content, content))
 		return (NULL);
 	res = NULL;
 	q = new_queue(root);
@@ -55,4 +55,52 @@ t_node	*get_parent(t_node *root, void *content, int (*compare)(void *, void *))
 	}
 	free_queue(q);
 	return (res);
+}
+
+t_node	*binary_search(t_node *root, void *content, int (*compare)(void *, void *))
+{
+	int		b;
+	t_node	*node;
+
+	if (!content)
+		return (NULL);
+	node = root;
+	while (node)
+	{
+		b = compare(content, node->content);
+		if (b == 0)
+			return (node);
+		if (b > 0)
+			node = node->right;
+		else
+			node = node->left;
+	}
+	return (NULL);
+}
+
+t_node	*binary_search_parent(t_node *root, void *content, int (*compare)(void *, void *))
+{
+	int		b;
+	t_node	*node;
+
+	if (!root || !content || !compare(content, root->content))
+		return (NULL);
+	node = root;
+	while (node)
+	{
+		b = compare(content, node->content);
+		if (b > 0)
+		{
+			if (node->right && !compare(content, node->right->content))
+				return (node);
+			node = node->right;
+		}
+		else
+		{
+			if (node->left && !compare(content, node->left->content))
+				return (node);
+			node = node->left;
+		}
+	}
+	return (NULL);
 }

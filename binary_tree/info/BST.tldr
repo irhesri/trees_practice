@@ -2498,6 +2498,28 @@
               "font": "erif",
               "textAlign": "middle"
             }
+          },
+          "97e817d8-342a-4f0a-3b9a-dae435aa9a3f": {
+            "id": "97e817d8-342a-4f0a-3b9a-dae435aa9a3f",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 87,
+            "point": [
+              1240.3,
+              530.25
+            ],
+            "rotation": 0,
+            "text": "It is called a search tree because it can be used to search \nfor the presence of a number in O(log(n)) time",
+            "style": {
+              "color": "red",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
           }
         },
         "bindings": {

@@ -15,6 +15,9 @@ t_node	*new_node(void *content);
 t_node	*insert_node(t_node *root, void *content);
 t_node	*bst_insertion(t_node *root, void *content);
 
+t_node	*left_rotation(t_node *root, t_node *node);
+t_node	*right_rotation(t_node *root, t_node *node);
+
 // TREE PROPERTIES
 int		get_height(t_node *root);
 int		get_size(t_node *root);
@@ -33,6 +36,8 @@ bool	is_skewed(t_node *root);
 // TREE SEARCH
 t_node	*get_node(t_node *root, void *content, int (*compare)(void *, void *));
 t_node	*get_parent(t_node *root, void *content, int (*compare)(void *, void *));
+t_node	*binary_search(t_node *root, void *content, int (*compare)(void *, void *));
+t_node	*binary_search_parent(t_node *root, void *content, int (*compare)(void *, void *));
 
 // TRASH CAN
 void	free_tree(t_node *root);

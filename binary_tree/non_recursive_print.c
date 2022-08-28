@@ -5,6 +5,8 @@ void	print_tree(t_node *root, void (*print)(void *, const char *))
 	t_queue		*q;
 	t_q_node	*node;
 
+	if (!root)
+		return ;
 	q = new_queue(NULL);
 	multiple_push(q, 2, root, NULL);
 	while (q->size)
@@ -28,7 +30,7 @@ void	print_tree(t_node *root, void (*print)(void *, const char *))
 	}
 	free_queue(q);
 }
-
+// check it again
 void	print_spaces(int x)
 {
 	while (x && --x)
@@ -44,6 +46,8 @@ void	print_tree_with_spaces(t_node *root, void (*print)(void *, const char *))
 	t_q_node	*node;
 
 	n = 1;
+	if (!root)
+		return ;
 	q = new_queue(root);
 	x = pow(2, get_height(root) + 1);
 	while (n <= (pow(2, get_height(root) + 1)))

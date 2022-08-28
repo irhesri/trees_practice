@@ -45,6 +45,7 @@ t_node	*insert_node(t_node *root, void *content)
 // LEFT NODE CONTENT SMALLER THAN THE PARENT CONTENT
 t_node	*bst_insertion(t_node *root, void *content)
 {
+	int		b;
 	t_node	*new;
 	t_node	*node;
 
@@ -52,9 +53,12 @@ t_node	*bst_insertion(t_node *root, void *content)
 	if (!root)
 		return (new);
 	node = root;
-	while (1)
+	while (node)
 	{
-		if (compare_int(content, node->content) > 0)
+		b = compare_int(content, node->content);
+		if (!b)
+			break;
+		if (b > 0)
 		{
 			if (!node->right)
 			{

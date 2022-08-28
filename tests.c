@@ -5,7 +5,7 @@ void	test_properties(t_node *root, t_node *node)
 {
 	printf("\nHEIGHT:\t%d\n", get_height(node));
 	printf("SIZE:  \t%d\n", get_size(node));
-	printf("DEPTH: \t%d\n", get_depth(root, node));
+	// printf("DEPTH: \t%d\n", get_depth(root, node));
 }
 
 void	types(t_node *root, int n)
@@ -47,9 +47,17 @@ void	test_search(t_node *root, void *content, int (*compare)(void *, void *))
 	t_node	*node;
 
 	node = get_node(root, content, compare);
-	printf("\nNODE CONTENT:\t%d", *(int *)(node->content));
+	if (node)
+		printf("\nNODE CONTENT:\t%d", *(int *)(node->content));
+	node = binary_search(root, content, compare);
+	if (node)
+		printf("\nNODE CONTENT BST:\t%d", *(int *)(node->content));
 	node = get_parent(root, content, compare);
-	printf("\nPARENT NODE CONTENT:\t%d\n", *(int *)(node->content));
+	if (node)
+		printf("\nPARENT NODE CONTENT:\t%d", *(int *)(node->content));
+	node = binary_search_parent(root, content, compare);
+	if (node)
+		printf("\nPARENT  CONTENT BST:\t%d\n", *(int *)(node->content));
 }
 
 void	test_print(t_node *root)
@@ -67,3 +75,17 @@ void	test_print(t_node *root)
 	// print_tree_with_spaces(root, print_int);
 	printf("\n");
 }
+
+void	test_rotation(t_node *root, void *content, int (*compare)(void *, void *))
+{
+	t_node	*node;
+
+	node = binary_search(root, content, compare);
+	if (!node)
+		return ;
+	print_tree(root, print_int);
+	root = right_rotation(root, node);
+	print_tree(root, print_int);
+}
+// 	1
+// 2		3

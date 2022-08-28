@@ -29,5 +29,6 @@ void	test_properties(t_node *root, t_node *node);
 void	test_types(t_node *root);
 void	test_search(t_node *root, void *content, int (*compare)(void *, void *));
 void	test_print(t_node *root);
+void	test_rotation(t_node *root, void *content, int (*compare)(void *, void *));
 
 #endif
