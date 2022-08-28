@@ -40,3 +40,38 @@ t_node	*insert_node(t_node *root, void *content)
 	free_queue(q);
 	return (root);
 }
+
+// RIGHT NODE CONTENT BIGGER THAN THE PARENT CONTENT
+// LEFT NODE CONTENT SMALLER THAN THE PARENT CONTENT
+t_node	*bst_insertion(t_node *root, void *content)
+{
+	t_node	*new;
+	t_node	*node;
+
+	new = new_node(content);
+	if (!root)
+		return (new);
+	node = root;
+	while (1)
+	{
+		if (compare_int(content, node->content) > 0)
+		{
+			if (!node->right)
+			{
+				node->right = new;
+				break;
+			}
+			node = node->right;
+		}
+		else
+		{
+			if (!node->left)
+			{
+				node->left = new;
+				break;
+			}
+			node = node->left;
+		}
+	}
+	return (root);
+}

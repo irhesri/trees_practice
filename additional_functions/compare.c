@@ -2,12 +2,12 @@
 
 // COMPARE FUNCTIONS FOR SEARCH
 
-bool	compare_int(void *a, void *b)
+int	compare_int(void *a, void *b)
 {
-	return (*(int *)a != *(int *)b);
+	return ((*(int *)a) - (*(int *)b));
 }
 
-bool	compare_str(void *a, void *b)
+int	compare_str(void *a, void *b)
 {
 	char	*str1;
 	char	*str2;

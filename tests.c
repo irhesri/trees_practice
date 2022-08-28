@@ -42,7 +42,7 @@ void	test_types(t_node *root)
 	}
 }
 
-void	test_search(t_node *root, void *content, bool (*compare)(void *, void *))
+void	test_search(t_node *root, void *content, int (*compare)(void *, void *))
 {
 	t_node	*node;
 

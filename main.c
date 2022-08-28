@@ -41,6 +41,32 @@ t_node	*init2(int	**i)
 	return (root);
 }
 
+t_node	*init3(int	**i)
+{
+	int		j;
+	t_node	*root;
+	
+	for (j = 0; j < g; j++)
+		*(i + j) = malloc (sizeof(int));
+	for (j = 0; j < g; j++)
+		**(i + j) = j + 1;
+
+	root = NULL;
+	j = 0;
+	while (j < g)
+	{
+		root = bst_insertion(root, *(i + j));
+		j += 2;
+	}
+	j = 1;
+	while (j < g)
+	{
+		root = bst_insertion(root, *(i + j));
+		j += 2;
+	}
+	return (root);
+}
+
 int	main(int ac, char **av)
 {
 	int		**k;
@@ -54,8 +80,9 @@ int	main(int ac, char **av)
 		g = atoi(av[1]);
 	i = (int **)malloc (sizeof(int *) * (g));
 	k = i;
-	root = init1(i);
+	// root = init1(i);
 	// root = init2(i);
+	root = init3(i);
 	/***********************************************/
 
 	/*****************	TEST PROPERTIES	************/

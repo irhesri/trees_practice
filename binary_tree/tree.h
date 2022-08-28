@@ -13,6 +13,7 @@ typedef struct s_node
 // TREE OPERATIONS
 t_node	*new_node(void *content);
 t_node	*insert_node(t_node *root, void *content);
+t_node	*bst_insertion(t_node *root, void *content);
 
 // TREE PROPERTIES
 int		get_height(t_node *root);
@@ -30,8 +31,8 @@ bool	is_right_skewed(t_node *root);
 bool	is_skewed(t_node *root);
 
 // TREE SEARCH
-t_node	*get_node(t_node *root, void *content, bool (*compare)(void *, void *));
-t_node	*get_parent(t_node *root, void *content, bool (*compare)(void *, void *));
+t_node	*get_node(t_node *root, void *content, int (*compare)(void *, void *));
+t_node	*get_parent(t_node *root, void *content, int (*compare)(void *, void *));
 
 // TRASH CAN
 void	free_tree(t_node *root);
